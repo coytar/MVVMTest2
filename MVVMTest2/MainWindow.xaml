@@ -1,0 +1,20 @@
+﻿<Window x:Class="MVVMTest2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMTest2"
+        xmlns:views="clr-namespace:MVVMTest2.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="438.047" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <views:NavBar Grid.Row="0" DataContext="{Binding Navigator}" />
+        <ContentControl Grid.Row="1" Content="{Binding Navigator.CurrentViewModel}" />
+
+    </Grid>
+</Window>
